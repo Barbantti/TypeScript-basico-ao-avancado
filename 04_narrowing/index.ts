@@ -12,14 +12,14 @@ sum("4", "59");
 sum(12, 42.3);
 sum("21", 22);
 
-const operations = async (arr: number[], operation?: string | undefined) => {
+const operations = (arr: number[], operation?: string | undefined) => {
   if (operation) {
     try {
       if (operation === "sum") {
-        const sum = await arr.reduce((i, total) => i + total);
+        const sum = arr.reduce((i, total) => i + total);
         console.log(sum);
       } else if (operation === "multiply") {
-        const multiply = await arr.reduce((i, total) => i * total);
+        const multiply = arr.reduce((i, total) => i * total);
         console.log(multiply);
       }
     } catch (error) {
@@ -90,15 +90,19 @@ console.log(jully);
 console.log(biscoito);
 console.log(bolacha);
 
-class Review {
-  grade;
+type Review = number | boolean;
 
-  constructor(grade?: number | boolean) {
-    if (grade) {
-      this.grade = grade;
-    }
+const getReviewMessage = (review: Review) => {
+  if (!review) {
+    return console.log("Voce nao avaliou o produto!");
   }
-}
+  console.log(
+    `Voce deixou uma review de ${review} estrela${
+      review !== 1 ? "s" : ""
+    }. Obrigado!`
+  );
+};
 
-const firstGrade = new Review(5);
-const secondGrade = new Review(10);
+getReviewMessage(false);
+getReviewMessage(2);
+getReviewMessage(5);
