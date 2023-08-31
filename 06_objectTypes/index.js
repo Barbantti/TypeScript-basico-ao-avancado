@@ -1,62 +1,63 @@
-var showProductDetails = function (product) {
+"use strict";
+const showProductDetails = (product) => {
     if (product.isAvailable) {
-        console.log("O produto ".concat(product.name, " com valor de R$").concat(product.price, ". Esta dispon\u00EDvel em estoque!"));
+        console.log(`O produto ${product.name} com valor de R$${product.price}. Esta disponível em estoque!`);
     }
     else {
-        console.log("O produto ".concat(product.name, ", nao esta dispon\u00EDvel!"));
+        console.log(`O produto ${product.name}, nao esta disponível!`);
     }
 };
-var shirt = {
+const shirt = {
     name: "T-shirt",
     price: 29.91,
     isAvailable: true,
 };
 showProductDetails(shirt);
-var showUserDetails = function (user) {
-    console.log("O usu\u00E1rio tem o e-mail: ".concat(user.email));
+const showUserDetails = (user) => {
+    console.log(`O usuário tem o e-mail: ${user.email}`);
     if (user.role) {
-        console.log("A fun\u00E7\u00E3o do usu\u00E1rio e: ".concat(user.role));
+        console.log(`A função do usuário e: ${user.role}`);
     }
 };
-var u1 = { email: "user.role@email.com", role: "Admin" };
-var u2 = { email: "user@email.com" };
+const u1 = { email: "user.role@email.com", role: "Admin" };
+const u2 = { email: "user@email.com" };
 showUserDetails(u1);
 showUserDetails(u2);
-var fusca = {
+const fusca = {
     brand: "VW",
     wheels: 4,
 };
 console.log(fusca);
-var coords = {
+let coords = {
     x: 10,
 };
 coords.y = 15;
 console.log(coords);
-var leonardo = {
+const leonardo = {
     name: "Leo",
     age: 28,
 };
 console.log(leonardo);
-var goku = {
+const goku = {
     name: "Goku",
     age: 50,
     superpowers: ["Kamehameha", "Genki Dama"],
 };
 console.log(goku);
 console.log(goku.superpowers[1]);
-var arnold = {
+const arnold = {
     name: "Arnold",
     type: "Shotgun",
     caliber: 12,
 };
 console.log(arnold);
 console.log(arnold.caliber);
-var myArray = ["Maca", "Laranja", "Banana"];
+let myArray = ["Maca", "Laranja", "Banana"];
 console.log(myArray);
-myArray.forEach(function (item) {
-    console.log("Fruta: ".concat(item));
+myArray.forEach((item) => {
+    console.log(`Fruta: ${item}`);
 });
-myArray = myArray.map(function (item) {
-    return "Fruta: ".concat(item);
+myArray = myArray.map((item) => {
+    return `Fruta: ${item}`;
 });
 console.log(myArray);
